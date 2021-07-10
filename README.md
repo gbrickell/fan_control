@@ -2,6 +2,8 @@
  Code for managing cooling fans that use a custom PCB to construct a simple on/off controller
  with a PNP transistor that is 'switched' with a GPIO pin signal.
 
+ Initially, python code for a Raspberry Pi has been developed, but additional code for a variety of microcontrollers is planned.
+
 # Raspberry Pi
 ![alt text](https://onlinedevices.co.uk/display1679)
 
