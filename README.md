@@ -3,8 +3,7 @@
  with a PNP transistor that is 'switched' with a GPIO pin signal.
 
 # Raspberry Pi
-.. image:: https://onlinedevices.co.uk/display167
-   :width: 300 px
+![alt text](https://onlinedevices.co.uk/display1679){:width="300px"}
 
  A control file is used to set:
 - upper and lower CPU temperature limits (fan on/off) 
