@@ -1,8 +1,9 @@
 # fan_control
  Code for managing cooling fans that use a custom PCB to construct a simple on/off controller
- with a NPN transistor that is 'switched' with a GPIO pin signal.
+ with a PNP transistor that is 'switched' with a GPIO pin signal.
 
 # Raspberry Pi
+![alt text](https://onlinedevices.co.uk/display1679)
 
  A control file is used to set:
 - upper and lower CPU temperature limits (fan on/off) 
