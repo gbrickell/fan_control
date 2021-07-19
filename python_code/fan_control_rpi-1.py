@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 
-# assumed RPi installation location for code: /home/pi/fan_control
+# assumed RPi installation location for code for the command below: /home/pi/fan_control
 # CLI command to run: python3 /home/pi/fan_control/fan_control_rpi-1.py
-# assumed RPi installation location for control file: /home/pi/control_files/
+# assumed RPi installation location for control file: /home/pi/control_files/ which must already exist
 # assumed RPi installation location for log file: /home/pi/usbdrive/server_logs/ 
-#   where /usbdrive is typically mapped to USB drive using /etc/fstab
+#  this log file must already exist and because this file has a lot of reads/writes, it is 
+#  recommended that /usbdrive is mapped to a USB drive using /etc/fstab to avoid the RPI's SD card 
+#  from early degradation/failure
 
-version = "v1: "
+version = "v2: "
 
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #
@@ -16,7 +18,14 @@ version = "v1: "
 def readdefaults():
     # open default file to read
     # default file, called 'server_fan_control.txt' contains the various control parameters
-    # file path hardcoded for simplicity
+    # file path hardcoded for simplicity and should be updated to wherever the file is located
+    # file contents is typically something like:
+    # {'ontemp': '55', 'offtemp': '48', 'sleep': '10', 'gpiopin': '17'}
+    # which specifies:
+    # switch on temp of 55 degC
+    # switch off temp of 48 deg c
+    # a sleep interval of 10 seconds
+    # the use of BCM GPIO #17 for the fan control GPIO pin
     defaultfile = open("/home/pi/control_files/server_fan_control.txt", "r") 
     readdefaults = defaultfile.read()
     defaults = eval(readdefaults)
@@ -33,6 +42,7 @@ def readdefaults():
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 def writetolog(msgtext, writetofile, records):
    # open log file to read
+   # because we do a read before a write the file must exist!
    local_logfile = open(writetofile, "r") # file path passed as a parameter
    currentcontent = local_logfile.readlines()
    #print ("writetolog - initial content: " + str(currentcontent))
