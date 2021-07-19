@@ -8,7 +8,7 @@
 #  recommended that /usbdrive is mapped to a USB drive using /etc/fstab to avoid the RPI's SD card 
 #  from early degradation/failure
 
-version = "v2: "
+version = "v2: "    # text to be used for version control and added to the logs
 
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #
