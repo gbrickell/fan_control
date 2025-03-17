@@ -3,7 +3,12 @@
 
  Initially, python code for a Raspberry Pi has been developed, but additional code for a variety of microcontrollers is planned - more details on this project are published <a href="https://onlinedevices.co.uk/Raspberry+Pi+cooling+fan+control+project" target="_blank" >here</a>.
 
-## Raspberry Pi
+## Custom PCB design
+The custom PCB (v2.0) was designed using KiCAD and the layout has been defined to allow the thru-hole components to be soldered into positions that are easily identified with clear labelling, and fixing holes allow the completed PCB assembly to be mechanically attached in a variety of ways.
+
+Gerber files for the PCB design can be downloaded from the PCB_design_files folder.
+
+## Raspberry Pi usage
 Typical use is as shown below for a 3D printed case for a Pi4 with a separate 3D printed frame for the custom PCB - the designs for these 3D prints can be downloaded from <a href="https://www.prusaprinters.org/prints/71045-fan-cooled-raspberry-pi-4-case" target="_blank">here</a>.
 
 <img src="https://onlinedevices.co.uk/display1679" width="354" height="300"> &nbsp; &nbsp; <img src="https://onlinedevices.co.uk/display1844" width="354" height="300">
